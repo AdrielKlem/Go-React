@@ -14,13 +14,13 @@ services:
   pgadmin:
     image: dpage/pgadmin4:latest
     restart: unless-stopped
-    depens_on:
+    depends_on:
       - db
     ports:
       - 8081:80
-    environmnent:
-      PDADMIN_DEFAULT_EMAIL: admin@admin.com
-      PDADMIN_DEFAULT_PASSWORD: password
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: password
     volumes:
       - pgadmin:/var/lib/pgadmin
 
